@@ -6,7 +6,16 @@ type Product{
  price:Float!
 
 }
+input ProductInput{
+    productName:String!,
+    description:String!,
+    price:Float!
+}
 
 type Query{
     getProducts:[Product]!
+}
+
+type Mutation{
+    saveProduct(product:ProductInput):Product
 }
