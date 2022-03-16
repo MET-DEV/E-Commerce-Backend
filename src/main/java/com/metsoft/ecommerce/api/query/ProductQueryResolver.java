@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class ProductQueryResolver implements GraphQLQueryResolver {
@@ -19,6 +20,9 @@ public class ProductQueryResolver implements GraphQLQueryResolver {
     }
     public List<Product> getProducts(){
         return productRepository.findAll();
+    }
+    public Optional<Product> getProductById(int id){
+        return productRepository.findById(id);
     }
 
 
