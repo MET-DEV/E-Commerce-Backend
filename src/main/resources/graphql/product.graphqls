@@ -1,9 +1,14 @@
 type Product{
- id:ID!
- productName:String!,
- description:String!,
- createDate:String!,
- price:Float!
+    id:ID!
+    productName:String!,
+    description:String!,
+    createDate:String!,
+    price:Float!,
+    category:Category
+}
+type Category{
+    id:ID!,
+    categoryName:String
 
 }
 

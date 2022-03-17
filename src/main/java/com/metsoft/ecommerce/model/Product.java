@@ -29,5 +29,8 @@ public class Product {
 
     @Column(name = "createDate")
     private Date createDate;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
 }
