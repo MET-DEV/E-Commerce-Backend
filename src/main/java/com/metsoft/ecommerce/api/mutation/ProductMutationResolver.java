@@ -22,4 +22,14 @@ public class ProductMutationResolver implements GraphQLMutationResolver {
         product.setCreateDate(new Date());
         return productRepository.save(product);
     }
+
+
+    public Product updateProduct(Product product){
+        return productRepository.save(product);
+    }
+
+    public String deleteProduct(int id){
+        productRepository.deleteById(id);
+        return "Product Deleted";
+    }
 }

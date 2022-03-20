@@ -6,16 +6,26 @@ type Product{
     price:Float!,
     category:Category
 }
+input ProductUpdateInput{
+    id:ID!,
+    productName:String,
+    description:String,
+    price:Float
+}
 type Category{
     id:ID!,
     categoryName:String
 
 }
+input  CategoryInput{
+    id:ID!
+}
 
-input ProductInput{
+input ProductAddInput{
     productName:String!,
     description:String!,
-    price:Float!
+    price:Float!,
+    category:CategoryInput
 }
 
 type Query{
@@ -24,5 +34,8 @@ type Query{
 }
 
 type Mutation{
-    saveProduct(product:ProductInput):Product
+    saveProduct(product:ProductAddInput):Product
+    updateProduct(product:ProductUpdateInput):Product
+    deleteProduct(id:ID):String
+
 }
